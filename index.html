@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body ng-app="product" >
+<div ng-controller="productController">
+	<h2>Kuch bhi bus dikh jaye</h2>
+	<label>Product name</label>
+	<input ng-model="name" type="text" />
+
+	<label>Product descritipn</label>
+	<input ng-model="description" type="text" />
+
+	<label>Product Price</label>
+	<input ng-model="price" type="text" />
+
+	<label>Product Image url</label>
+	<input ng-model="imageUrl" type="text" />
+
+	<button ng-click="addProduct()">Submit</button>
+
+
+	<button ng-click="getProducts()">Get</button>
+
+	<table>
+		<tr ng-repeat="product in productList">
+			<td>{{product.name}}</td>
+			<td>{{product.description}}</td>
+			<td>{{product.price}}</td>
+			<td>{{product.imageUrl}}</td>
+			<td><button ng-click="deleteProduct(product._id)">Delete</button></td>
+		</tr>
+	</table>
+
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
